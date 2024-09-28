@@ -1,0 +1,12 @@
+### 웹으로 진행
+GET https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=a363013921e07cd38815147701a0e65e&redirect_uri=http://localhost:8080/login/callback
+
+### Token 발급
+POST https://kauth.kakao.com/oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=authorization_code&client_id=8c726ec0ff9d015553a536f3bfa6f551&redirect_uri=http://localhost:3000&code=qOFTOhHy_a665BKOCgbZUfAuoZkfgMtq6XHk70uPmaOvXFJmHbF7MAAAAAQKPXObAAABkjFp703Nsk3jZ7dWzg
+
+### Token Info
+GET https://kapi.kakao.com/v1/user/access_token_info
+Authorization: Bearer prpF4cIsmbifYsEiS94bl_fYKFgxhRBHAAAAAQo8IlEAAAGSHwfNUejqOP6o1CZo

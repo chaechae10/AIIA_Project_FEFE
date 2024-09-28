@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEFE - Kakao Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+        }
+        .title {
+            font-size: 36px;
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 40px;
+        }
+        .subtitle a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+        .subtitle a:hover {
+            text-decoration: underline;
+        }
+        .login-btn {
+            display: inline-block;
+            background-color: #fee500;
+            padding: 15px 30px;
+            border-radius: 10px;
+            color: #3c1e1e;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .login-btn img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="title">FEFE</h1>
+    <p class="subtitle">가천대생을 위한 대학 축제 플랫폼, <a href="#">페페!</a></p>
+    <a class="login-btn" th:href="${location}">
+        <img src="/kakao_login_medium_narrow.png" alt="카카오 로그인 버튼" width="24">
+        카카오 로그인
+    </a>
+</div>
+</body>
+</html>
