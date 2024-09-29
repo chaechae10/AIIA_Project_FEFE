@@ -30,6 +30,7 @@ public class KakaoLoginController {
 
     @GetMapping("/page")
     public String loginPage(Model model) {
+        //kakao 인증을 위한 url 생성
         String location = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=" + clientId + "&redirect_uri=" + redirectUri;
         model.addAttribute("location", location);
         return "login";
@@ -39,10 +40,11 @@ public class KakaoLoginController {
     public String callback(@RequestParam("code") String code) {
         log.info("Received authorization code: {}", code);
 
+        //코드를 이용해서 액세스 토큰 받아옴
         String accessToken = kakaoService.getAccessTokenFromKakao(code);
-        KakaoUserInfoResponseDto userInfo = kakaoService.getUserInfo(accessToken);
 
-        log.info("Kakao User ID: {}", userInfo.getId());
+        //액세스 토큰 사용해서 사용자 정보 가져옴
+        KakaoUserInfoResponseDto userInfo = kakaoService.getUserInfo(accessToken);
 
         // React 회원가입 페이지로 리다이렉트
         return "redirect:http://localhost:3000/register?kakaoId=" + userInfo.getId();

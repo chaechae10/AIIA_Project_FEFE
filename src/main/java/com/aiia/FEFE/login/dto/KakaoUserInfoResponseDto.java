@@ -1,3 +1,4 @@
+//카카오에서 제공하는 사용자 정보를 담기 위한 DTO
 package com.aiia.FEFE.login.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

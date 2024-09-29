@@ -20,7 +20,7 @@ public class UserService {
         Optional<User> existingUser = userRepository.findByKakaoId(kakaoId);
 
         return existingUser.orElseGet(() -> {
-            User newUser = new User(kakaoId, name, phoneNumber, department); // 프로필 이미지 추가
+            User newUser = new User(kakaoId, name, phoneNumber, department);
             return userRepository.save(newUser);
         });
     }

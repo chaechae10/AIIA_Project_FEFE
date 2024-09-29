@@ -1,3 +1,4 @@
+//카카오에서 발급받은 토큰 정보를 담는 DTO
 package com.aiia.FEFE.login.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
