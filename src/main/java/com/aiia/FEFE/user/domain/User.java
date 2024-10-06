@@ -14,9 +14,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private Long kakaoId;
-
     @Column(nullable = false)
     private String name;
 
@@ -26,8 +23,7 @@ public class User {
     @Column(nullable = false)
     private String department;
 
-    public User(Long kakaoId, String name, String phoneNumber, String department) {
-        this.kakaoId = kakaoId;
+    public User(String name, String phoneNumber, String department) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.department = department;

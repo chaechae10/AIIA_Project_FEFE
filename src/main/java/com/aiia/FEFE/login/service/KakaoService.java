@@ -1,7 +1,10 @@
 package com.aiia.FEFE.login.service;
 
+import com.aiia.FEFE.login.dto.KakaoSignUpDto;
 import com.aiia.FEFE.login.dto.KakaoTokenResponseDto;
 import com.aiia.FEFE.login.dto.KakaoUserInfoResponseDto;
+import com.aiia.FEFE.user.domain.User;
+import com.aiia.FEFE.user.repository.UserRepository;
 import io.netty.handler.codec.http.HttpHeaderValues;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +20,7 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class KakaoService {
 
+    private final UserRepository userRepository;
     @Value("${kakao.client_id}")
     private String clientId;
 
@@ -34,6 +38,7 @@ public class KakaoService {
                         .queryParam("grant_type", "authorization_code")
                         .queryParam("client_id", clientId)
                         .queryParam("code", code)
+                        .queryParam("redirect_uri", "http://localhost:3000/callback")
                         .build(true))
                 .header(HttpHeaders.CONTENT_TYPE, HttpHeaderValues.APPLICATION_X_WWW_FORM_URLENCODED.toString())
                 .retrieve()
@@ -70,4 +75,14 @@ public class KakaoService {
 
         return userInfo; //kakao 정보가 담긴 객체를 반환
     }
+
+    public String createJwtToken(KakaoUserInfoResponseDto userInfo) {
+        return "jwt_token_example";
+    }
+
+    public void registerUser(KakaoSignUpDto signUpDto){
+        User user = new User(signUpDto.getName(), signUpDto.getPhoneNumber(), signUpDto.getDepartment());
+        userRepository.save(user);
+    }
+
 }

@@ -1,1 +1,10 @@
+###회원가입
+POST http://localhost:8080/kakaosignup
+Content-Type: application/json
 
+{
+  "id": "",
+  "name": "김채연",
+  "phoneNumber": "01012345678",
+  "department": "컴퓨터공학과"
+}
