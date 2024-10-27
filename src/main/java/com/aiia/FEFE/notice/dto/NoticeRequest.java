@@ -1,7 +1,6 @@
-package com.aiia.FEFE.notice;
+package com.aiia.FEFE.notice.dto;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public class NoticeRequest {

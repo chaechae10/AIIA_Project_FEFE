@@ -1,4 +1,4 @@
-package com.aiia.FEFE.notice;
+package com.aiia.FEFE.notice.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;

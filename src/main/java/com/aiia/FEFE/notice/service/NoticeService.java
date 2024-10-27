@@ -1,8 +1,10 @@
-package com.aiia.FEFE.notice;
+package com.aiia.FEFE.notice.service;
 
 import com.aiia.FEFE.exception.NoticeNotFoundException;
+import com.aiia.FEFE.notice.domain.Notice;
+import com.aiia.FEFE.notice.dto.NoticeRequest;
+import com.aiia.FEFE.notice.repository.NoticeRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

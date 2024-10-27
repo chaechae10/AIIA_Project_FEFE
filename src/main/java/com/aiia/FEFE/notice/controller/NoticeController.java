@@ -1,9 +1,11 @@
-package com.aiia.FEFE.notice;
+package com.aiia.FEFE.notice.controller;
 
+import com.aiia.FEFE.notice.domain.Notice;
+import com.aiia.FEFE.notice.dto.NoticeRequest;
+import com.aiia.FEFE.notice.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
