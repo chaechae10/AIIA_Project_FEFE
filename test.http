@@ -8,3 +8,65 @@ Content-Type: application/json
   "phoneNumber": "01012345678",
   "department": "컴퓨터공학과"
 }
+
+### 공지사항 작성1
+POST http://localhost:8080/api/notices
+Content-Type: application/json
+
+{
+  "title": "공지사항1 제목",
+  "content": "공지사항1 내용",
+  "imageUrl": "http://example.com/image1.jpg"
+}
+
+###공지사항 작성2
+POST http://localhost:8080/api/notices
+Content-Type: application/json
+
+{
+  "title": "공지사항2 제목",
+  "content": "공지사항2 내용",
+  "imageUrl": "http://example.com/image2.jpg"
+}
+
+### 공지사항 작성3
+POST http://localhost:8080/api/notices
+Content-Type: application/json
+
+{
+  "title": "공지사항3제목",
+  "content": "공지사항3 내용",
+  "imageUrl": "http://example.com/image3.jpg"
+}
+
+###공지사항 조회
+GET http://localhost:8080/api/notices
+Content-Type: application/json
+
+###특정공지사항 조회1
+GET http://localhost:8080/api/notices/1
+Content-Type: application/json
+
+###특정공지사항 조회2
+GET http://localhost:8080/api/notices/2
+Content-Type: application/json
+
+###특정공지사항 조회3
+GET http://localhost:8080/api/notices/3
+Content-Type: application/json
+
+###공지사항 수정
+PUT http://localhost:8080/api/notices/1
+Content-Type: application/json
+
+{
+  "title": "변경된 공지사항 제목1",
+  "content": "변경된 공지사항 내용1",
+  "imageUrl": "http://example.com/image.jpg"
+
+}
+
+###공지사항 삭제
+DELETE http://localhost:8080/api/notices/1
+Content-Type: application/json
+
