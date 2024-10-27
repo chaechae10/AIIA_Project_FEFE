@@ -70,3 +70,7 @@ Content-Type: application/json
 DELETE http://localhost:8080/api/notices/1
 Content-Type: application/json
 
+###존재하지 않는 공지사항 조회(예외)
+GET http://localhost:8080/api/notices/9999
+Content-Type: application/json
+

@@ -5,6 +5,7 @@ import com.aiia.FEFE.notice.domain.Notice;
 import com.aiia.FEFE.notice.dto.NoticeRequest;
 import com.aiia.FEFE.notice.repository.NoticeRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,7 +21,7 @@ public class NoticeService {
         return noticeRepository.findAll();
     }
 
-    public Optional<Notice> getNoticeById(Long id){
+    public Optional<Notice> getNoticeById(Long id) {
         return noticeRepository.findById(id);
     }
 

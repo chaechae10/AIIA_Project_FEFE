@@ -1,5 +1,6 @@
 package com.aiia.FEFE.notice.controller;
 
+import com.aiia.FEFE.exception.NoticeNotFoundException;
 import com.aiia.FEFE.notice.domain.Notice;
 import com.aiia.FEFE.notice.dto.NoticeRequest;
 import com.aiia.FEFE.notice.service.NoticeService;
@@ -26,10 +27,9 @@ public class NoticeController {
     //특정 공지사항 조회
     @GetMapping("/{id}")
     public ResponseEntity<Notice> getNoticeById(@PathVariable Long id){
-       return noticeService.getNoticeById(id)
-        .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
-
+        Notice notice = noticeService.getNoticeById(id)
+                .orElseThrow(() -> new NoticeNotFoundException("Notice not found with id = " + id));
+        return ResponseEntity.ok(notice);
     }
 
     //공지사항 작성
